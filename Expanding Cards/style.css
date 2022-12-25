@@ -62,6 +62,7 @@ body {
 .panel.active h3 {
     /* change to be visible */
     opacity: 1;
+    /* the transition makes it so the h3 doesn't come up immediately, so that it won't resize during the expansion of the card */
     transition: opacity 0.3s ease-in 0.4s;
 }
 
