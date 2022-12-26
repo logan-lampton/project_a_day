@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* root scope to define custom properties */
+/* allows us to quickly change the colors of the line borders for empty and full, as they will update the variable calls through out the CSS class rules: */
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
 body {
     background-color: #f6f7fb;
     font-family: 'Muli', sans-serif;
@@ -35,7 +42,7 @@ body {
 .progress-container::before{
     /* when you use ::before or ::after, you have to add the content line below */
     content: '';
-    background-color: #e0e0e0;
+    background-color: var(--line-border-empty);
     position: absolute;
     top: 50%;
     left: 0;
@@ -49,7 +56,7 @@ body {
 }
 
 .progress {
-    background-color: #3498db;
+    background-color: var(--line-border-fill);
     position: absolute;
     top: 50%;
     left: 0;
@@ -60,4 +67,50 @@ body {
     z-index: -1;
     /* the transition delay from clicking the button, for the line to move to the next number */
     transition: 0.4s ease;
+}
+
+.circle {
+    background-color: white;
+    color: #999;
+    /* rounds the circle shape*/
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    /* the display, align-items and justify-content below, put the numbers in the middle of the circles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+}
+
+/* circle that is active based on the button clicks */
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    /* can't click on button; makes not allowed symbol */
+    cursor: not-allowed;
 }
