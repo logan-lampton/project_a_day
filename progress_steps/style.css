@@ -6,9 +6,9 @@
 }
 
 body {
+    background-color: #f6f7fb;
     font-family: 'Muli', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* height 100 view height, takes up 100% of the screen (viewport) */
@@ -16,4 +16,17 @@ body {
     /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
 }
