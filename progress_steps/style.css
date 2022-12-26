@@ -30,3 +30,34 @@ body {
     max-width: 100%;
     width: 350px;
 }
+
+/* faint gray line behind */
+.progress-container::before{
+    /* when you use ::before or ::after, you have to add the content line below */
+    content: '';
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* sets the progress line to be exactly in the middle of the numbers */
+    transform: translateY(-50%);
+    height: 4px;
+    /* represents the empty line of the whole thing */
+    width: 100%;
+    z-index: -1;
+    /* no transition, since this faint line will never move, always 100% full */
+}
+
+.progress {
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* sets the progress line to be exactly in the middle of the numbers */
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    /* the transition delay from clicking the button, for the line to move to the next number */
+    transition: 0.4s ease;
+}
