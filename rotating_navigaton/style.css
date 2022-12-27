@@ -1,19 +1,84 @@
 /* roboto styles from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* height 100 view height, takes up 100% of the screen (viewport) */
-    height: 100vh;
-    /* doesn't show scroll bars by default */
-    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    background-color: #333;
+    color: #222;
+    /* only hides the scroll bar on the X axis */
+    overflow-x: hidden;
     margin: 0;
+}
+
+.container {
+    background-color: #fafafa;
+    /* changes the rotate origin from the center of the screen to the top left */
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    /* 100vw takes up the whole viewport horizonatally */
+    width: 100vw;
+    /* takes up the whole viewport height */
+    min-height: 100vw;
+    padding: 50px;
+}
+
+/* manipulate the "container show-nav" class */
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+/* wraps around the icons */
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    /* half of the circle is off the screen */
+    border-radius: 50%;
+    position: relative;
+    transition: transfom 0.5s linear;
+}
+
+/* button within the circle */
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: white;
+}
+
+/* manipulates the circle button */
+.circle button:focus {
+    outline: none;
+}
+
+/* circle button with an ID (#) of open */
+.circle button#open {
+    left: 60%;
+}
+
+/* circle button with an ID of close */
+.circle button#close {
+    top: 60%;
+    /* rotate 90 degrees */
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.content img {
+    max-width: 100%;
 }
