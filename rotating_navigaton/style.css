@@ -48,6 +48,10 @@ body {
     transition: transfom 0.5s linear;
 }
 
+/* .container.show-nav .circle {
+    transform: rotate(-70deg);
+} */
+
 /* button within the circle */
 .circle button {
     cursor: pointer;
@@ -79,6 +83,87 @@ body {
     transform-origin: top left;
 }
 
+.container.show-nav + nav li {
+    /* bring to original position */
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    /* make text all uppercase */
+    text-transform: uppercase;
+    color: white;
+    margin: 40px 0;
+    /* - moves left on the X axis */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+
+/* change the nav bar images to be bigger and have more margin */
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* About */
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+/* Contact */
+nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+nav a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover {
+    color: #ff7979;
+    font-weight: bold;
+}
+
 .content img {
     max-width: 100%;
 }
+
+.content {
+    /* stay in the middle of the page */
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* title */
+.content h1 {
+    margin: 0;
+}
+
+/* subtitle*/
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+/* text throughout */
+.content p {
+    color: #333;
+    line-height: 1.5;
+}
+
