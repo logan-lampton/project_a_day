@@ -19,13 +19,13 @@ body {
 
 /* background */
 .bg {
-    background: url('https://www.gamespot.com/a/uploads/scale_super/1562/15626911/3939537-untitled-1-recovered-recovered.jpg') no-repeat center center/cover;
+    background: url('https://m.media-amazon.com/images/S/aplus-media-library-service-media/0fcb2e78-62c7-400d-9b3d-faf0ede1be29.__CR0,0,970,600_PT0_SX970_V1___.jpg') no-repeat center center/cover;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -30;
+    left: -30;
     /* take up full viewport */
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
     z-index: -1;
     filter: blur(0px);
 }
