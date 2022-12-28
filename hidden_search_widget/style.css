@@ -6,9 +6,9 @@
 }
 
 body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* height 100 view height, takes up 100% of the screen (viewport) */
@@ -16,4 +16,49 @@ body {
     /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
+}
+
+.search {
+    position: relative;
+    height: 50px;
+}
+
+/* search bar starts small, this is the styling for this */
+.search .input {
+    background-color: white;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+/* covers the search bar initially */
+.btn {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    /* positions absolute within the search container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus, .input:focus {
+    outline: none;
+}
+
+/* when search element has an active class, make search bar longer */
+.search.active .input {
+    width: 200px;
+}
+
+/* when search element has the class of active, move the button over on the X axis */
+.search.active .btn {
+    transform: translateX(198px);
 }
