@@ -1,0 +1,36 @@
+/* roboto styles from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height 100 view height, takes up 100% of the screen (viewport) */
+    height: 100vh;
+    /* doesn't show scroll bars by default */
+    overflow: hidden;
+    margin: 0;
+}
+
+/* background */
+.bg {
+    background: url('https://www.gamespot.com/a/uploads/scale_super/1562/15626911/3939537-untitled-1-recovered-recovered.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* take up full viewport */
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(0px);
+}
+
+.loading-text {
+    font-size: 50px;
+    color: white;
+}
