@@ -22,7 +22,7 @@ body {
     /* 100vw takes up the whole viewport horizonatally */
     width: 100vw;
     /* takes up the whole viewport height */
-    min-height: 100vw;
+    min-height: 100vh;
     padding: 50px;
 }
 
@@ -43,14 +43,15 @@ body {
     height: 200px;
     width: 200px;
     /* half of the circle is off the screen */
+    /* border-radius makes it a circle */
     border-radius: 50%;
     position: relative;
-    transition: transfom 0.5s linear;
+    transition: transform 0.5s linear;
 }
 
-/* .container.show-nav .circle {
+.container.show-nav .circle {
     transform: rotate(-70deg);
-} */
+}
 
 /* button within the circle */
 .circle button {
