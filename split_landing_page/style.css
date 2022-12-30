@@ -1,19 +1,71 @@
 /* roboto styles from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* variable to make background easy to change */
+:root {
+    /* rgba value (red, green, blue, alpha) to allow the 4th property, the transparency */
+    /* a mostly blue value, as can be seen by the 236 blue value*/
+    --left-bg-color: rgba(87, 84, 236, 0.7);
+    /* a more black color */
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* height 100 view height, takes up 100% of the screen (viewport) */
+    /* 100% of viewport height */
     height: 100vh;
-    /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: url('ps.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    /* need a content property for any ::before in CSS*/
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* variable to make background easy to change */
+    background-color: var(--left-bg-color);
+}
+
+.split.right {
+    right: 0;
+    background: url('xbox.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    /* need a content property for any ::before in CSS*/
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* variable to make background easy to change */
+    background-color: var(--right-bg-color);
 }
