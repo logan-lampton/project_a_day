@@ -94,3 +94,11 @@ body {
 .form-control input:focus, .form-control input:valid {
     outline: 0;
 }
+
+.form-control label {
+    /* form-control is relative on the page, the label is absolute within*/
+    position: absolute;
+    /* moves the label to go up to the input line */
+    top: 15px;
+    left: 0;
+}
