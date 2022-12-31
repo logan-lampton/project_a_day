@@ -1,12 +1,14 @@
 /* roboto styles from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: steelblue;
+    color: white;
+    font-family: 'Muli', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,4 +18,79 @@ body {
     /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
+}
+
+.container {
+    /* black with transparency of 0.4 out of 1 */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 20px height, 40px width */
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* the register link */
+.container a {
+    /* remove the blue color and underline */
+    text-decoration: none;
+    color: lightblue;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+/* when button is clicked on */
+.btn:active {
+    /* scale from 1 to 0.98 */
+    /* gets slightly smaller when clicked on, which looks great! */
+    transform: scale(0.98)
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.form-control {
+    position: relative;
+    /* margin: 20px top and bottom, 0px left and right, 40px bottom;  */
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+/* the form inputs where users input their data */
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    /* 2px wide border, white color, solid line */
+    border-bottom: 2px white solid;
+    /* moves everything to their own line (moves text below the input) */
+    display: block;
+    /* line goes across 100% of the form-control*/
+    width: 100%;
+    padding: 15px 0;
+    /* the font size and color of the text the user types */
+    font-size: 18px;
+    color: white;
+}
+
+/* removes outline when user is typing*/
+.form-control input:focus, .form-control input:valid {
+    outline: 0;
 }
