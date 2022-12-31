@@ -14,6 +14,8 @@
     /* custom properties to cycle between one side taking up 75% of the width of the screen and the other 25% */
     --hover-width: 75%;
     --other-width: 25%;
+    /* 1000ms is 1s */
+    --speed: 1000ms;
 }
 
 * {
@@ -109,6 +111,10 @@ h1 {
     background-size: cover;
 }
 
+.split.right, .split.left, .split.right::before, .split.left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
 .split.right::before {
     /* need a content property for any ::before in CSS*/
     content: '';
@@ -133,4 +139,17 @@ h1 {
 
 .hover-right .right {
     width: var(--hover-width);
+}
+
+/* media query for smaller screens */
+@media(max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
 }
