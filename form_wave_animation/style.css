@@ -93,6 +93,7 @@ body {
 /* removes outline when user is typing*/
 .form-control input:focus, .form-control input:valid {
     outline: 0;
+    border-bottom-color: lightblue;
 }
 
 .form-control label {
@@ -101,4 +102,20 @@ body {
     /* moves the label to go up to the input line */
     top: 15px;
     left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    /* bezier defines a curve; makes this like a bounce up */
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* input:focus means when we click inside */
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    /* move up */
+    transform: translateY(-30px);
 }

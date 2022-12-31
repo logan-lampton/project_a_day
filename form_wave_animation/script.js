@@ -6,7 +6,7 @@ labels.forEach(label => {
         // split the label into individual letters
         .split('')
         // run code on an array each of the letters individually
-        .map((letter, index) => `<span>${letter}</span>`)
+        .map((letter, index) => `<span style="transition-delay:${index * 50}ms">${letter}</span>`)
         // turns the array back into a string
         .join('')
 });
