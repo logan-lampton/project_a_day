@@ -79,6 +79,8 @@ h1 {
 .faq-toggle {
     background-color: transparent;
     border: 0;
+    /* make the toggle button a circle */
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -90,4 +92,24 @@ h1 {
     right: 30px;
     height: 30px;
     width: 30px;
+}
+
+/* the "x" button */
+.faq-toggle .fa-times {
+    display: none;
+}
+
+/* the "x" button active */
+.faq.active .faq-toggle .fa-times {
+    display: block;
+    color: white;
+}
+
+/* the "chevron" button active */
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
+
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
 }
