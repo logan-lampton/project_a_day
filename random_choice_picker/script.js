@@ -8,6 +8,14 @@ textarea.focus()
 textarea.addEventListener('keyup', (e) => {
     // calls our function createTags on whatever the user types in
     createTags(e.target.value)
+    // if the user presses the Enter key select a random choice
+    if(e.key === 'Enter'){
+        // wait 10ms then clear the input value
+        setTimeout(() => {
+            e.target.value = ''
+        }, 10);
+        randomSelect();
+    }
 })
 
 function createTags(input){
@@ -26,4 +34,47 @@ function createTags(input){
         // makes the tagElement a child of tagsElement
         tagsElement.appendChild(tagElement);
     })
+}
+
+// randomly select a choice
+function randomSelect(){
+    // number of times it will highlight a choice
+    const times = 30;
+
+    const interval = setInterval(() => {
+        const randomTag = pickRandomTag()
+        
+        highlightTag(randomTag)
+
+        setTimeout(() => {
+            unHighlightTag(randomTag);
+        }, 100)
+    }, 100);
+
+    // clear the interval after it runs a number of times = to our times variable (so it doesn't run forever)
+    // set a randomTag using the pickRandomTag method and set it to remain highlighted when the interval clears
+    setTimeout(() => {
+        clearInterval(interval);
+        setTimeout(() => {
+           const randomTag = pickRandomTag()
+           highlightTag(randomTag)
+        }, 100)
+    }, times * 100)
+}
+
+function pickRandomTag(){
+    // select all the elements with the class of tag
+    const tags = document.querySelectorAll('.tag');
+    // return the tags node list at the index of a random number * the length of the tags node list, rounded down with Math.floor method
+    return tags[Math.floor(Math.random() * tags.length)];
+}
+
+// apply highlight class to a tag
+function highlightTag(tag){
+    tag.classList.add('highlight');
+}
+
+// remove highlight class from a tag
+function unHighlightTag(tag){
+    tag.classList.remove('highlight');
 }
