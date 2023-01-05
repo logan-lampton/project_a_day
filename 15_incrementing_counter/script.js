@@ -9,6 +9,7 @@ counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         const c = +counter.innerText
 
+        // 500ms
         const increment = target / 500;
 
         if(c < target){
