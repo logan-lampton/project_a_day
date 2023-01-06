@@ -16,7 +16,6 @@ body {
     /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
-    background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
     /* center on x axis and center on y axis */
     background-position: center center;
     background-size: cover;
