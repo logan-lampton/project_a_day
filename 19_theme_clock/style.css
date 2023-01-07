@@ -62,7 +62,6 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: #f0f0f0
 }
 
 .needle {
@@ -87,7 +86,7 @@ body {
     height: 100px;
 }
 
-.needle.minute {
+.needle.second {
     transform: translate(-50%, -100%) rotate(0deg);
     height: 100px;
     background-color: #e74c3c;
@@ -117,5 +116,12 @@ body {
 }
 
 .time {
+    font-size: 60px;
+}
 
+.date {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 }
