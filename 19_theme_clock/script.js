@@ -25,14 +25,19 @@ function setTime(){
     const time = new Date();
     const month = time.getMonth();
     const day = time.getDay();
+    const date = time.getDate();
     const hours = time.getHours();
     const hoursForClock = hours % 12;
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
+    const ampm = hours > 12 ? 'PM' : 'AM';
 
     hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
     minuteElement.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
     secondElement.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+
+    timeElement.innerHTML = `${hoursForClock}: ${minutes < 10 ? `0${minutes}` : minutes} ${ampm}`;
+    dateElement.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 
 };
 
