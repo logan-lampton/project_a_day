@@ -1,0 +1,23 @@
+/* roboto styles from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height 100 view height, takes up 100% of the screen (viewport) */
+    height: 100vh;
+    /* doesn't show scroll bars by default */
+    overflow: hidden;
+    margin: 0;
+}
+
+button {
+    background-color: red;
+}
