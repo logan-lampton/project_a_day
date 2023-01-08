@@ -31,10 +31,13 @@ button {
     margin: 10px 0;
     /* makes the .circle relative to the button */
     position: relative;
+    cursor: pointer;
 }
 
 button:focus {
     outline: none;
+    background: rgb(160, 6, 255);
+    text-decoration: underline;
 }
 
 button .circle {
