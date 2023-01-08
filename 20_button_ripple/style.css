@@ -6,6 +6,7 @@
 }
 
 body {
+    background-color: black;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -19,5 +20,40 @@ body {
 }
 
 button {
-    background-color: red;
+    background-color: purple;
+    color: white;
+    border: 1px purple solid;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 30px;
+    overflow: hidden;
+    margin: 10px 0;
+    /* makes the .circle relative to the button */
+    position: relative;
+}
+
+button:focus {
+    outline: none;
+}
+
+button .circle {
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* start not present ((scale(0)) */
+    transform: translate(-50%, -50%) scale(0);
+    /* add circle with the animation */
+    animation: scale .5s ease-out;
+}
+
+/* animation */
+@keyframes scale {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        /* fade out effect */
+        opacity: 0;
+    }
 }
