@@ -2,6 +2,12 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const sizeElement = document.getElementById('size');
+const colorElement = document.getElementById('color');
+const clearElement = document.getElementById('clear');
+
 let size = 20;
 let isPressed = false;
 let color = 'black';
