@@ -8,7 +8,7 @@ const sizeElement = document.getElementById('size');
 const colorElement = document.getElementById('color');
 const clearElement = document.getElementById('clear');
 
-let size = 20;
+let size = 10;
 let isPressed = false;
 let color = 'black';
 let x;
@@ -59,6 +59,36 @@ function drawLine(x1, y1, x2, y2){
     ctx.lineWidth = size * 2;
     ctx.stroke();
 };
+
+function updateSizeOnScreen(){
+    sizeElement.innerText = size;
+    console.log(sizeElement);
+}
+
+// when there is a change to the colorElement, color = the value of the target of the event
+colorElement.addEventListener('change', (e) => color = e.target.value);
+
+increaseBtn.addEventListener('click', () => {
+    size += 5;
+    // don't let size get greater than 50
+    if(size > 50){
+        size = 50;
+    }
+    updateSizeOnScreen();
+})
+
+decreaseBtn.addEventListener('click', () => {
+    size -= 5;
+    // don't let size get less than 5
+    if(size < 5){
+        size = 5;
+    }
+    updateSizeOnScreen();
+})
+
+// use a built in method of clearRect()
+clearElement.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
+
 
 // drawCircle(400, 400);
 // drawLine(250, 250, 500, 500);
