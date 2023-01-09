@@ -1,14 +1,10 @@
-/* roboto styles from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: steelblue;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* height 100 view height, takes up 100% of the screen (viewport) */
@@ -16,4 +12,38 @@ body {
     /* doesn't show scroll bars by default */
     overflow: hidden;
     margin: 0;
+}
+
+.empty {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    border: solid 3px black;
+    background: white;
+}
+
+.fill {
+    /* random image from unsplash.com */
+    background-image: url('https://source.unsplash.com/random/150x150');
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+}
+
+/* class for image when holding/dragging */
+.hold {
+    border: solid 5px #ccc;
+}
+
+/* class of box while dragged image is over it */
+.hovered {
+    background-color: #333;
+    border-color: white;
+    border-style: dashed;
+}
+
+@media(max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
 }
