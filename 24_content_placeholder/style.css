@@ -78,3 +78,26 @@ img {
     color: #aaa;
     margin-top: 5px;
 }
+
+.animated-bg {
+    background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite;
+}
+
+.animated-b-text {
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+    height: 10px;
+    width: 100%;
+}
+
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: -150% 0;
+    }
+}
